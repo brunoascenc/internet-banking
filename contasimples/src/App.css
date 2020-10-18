@@ -17,6 +17,7 @@ button {
   appearance: none;
 }
 
+/*--------Login---------*/
 .login-container {
   display: -ms-grid;
   display: grid;
@@ -149,5 +150,64 @@ button {
   font-size: 0.8rem;
   margin-top: 5px;
   font-weight: 100;
+}
+
+/*---------Home---------*/
+.menu-container {
+  height: 100vh;
+  width: 20vw;
+  border-right: solid 1px #e7dfdf;
+}
+
+.menu-container nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 2rem;
+  height: 100vh;
+}
+
+.menu-container nav img {
+  width: 160px;
+  margin-bottom: 2rem;
+}
+
+.menu-container nav ul {
+  margin-top: 5rem;
+  list-style: none;
+}
+
+.menu-container nav ul a {
+  text-decoration: none;
+  color: #1f1d1d;
+  margin-left: 1rem;
+}
+
+.menu-container nav ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 1.3rem;
+  color: #a29da7;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.menu-container nav .saldo h3 {
+  color: #939793;
+  font-size: 1rem;
+  margin-bottom: 2px;
+}
+
+.menu-container nav .saldo span {
+  font-weight: bold;
+  font-size: 1.8rem;
 }
 /*# sourceMappingURL=App.css.map */

@@ -19,12 +19,13 @@ button {
 //Variables
 $main-green: rgb(69, 181, 74);
 
+/*--------Login---------*/
 .login-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   height: 100vh;
   .login-wpp {
-    background: url('./images/login.jpg') no-repeat;
+    background: url("./images/login.jpg") no-repeat;
     background-size: cover;
   }
   .login-form {
@@ -110,6 +111,57 @@ $main-green: rgb(69, 181, 74);
         font-size: 0.8rem;
         margin-top: 5px;
         font-weight: 100;
+      }
+    }
+  }
+}
+
+
+/*---------Home---------*/
+
+//Side menu
+.menu-container{
+  // position: fixed;
+  // left: 0;
+  height: 100vh;
+  width: 20vw;
+  border-right: solid 1px rgb(231, 223, 223);
+  nav{
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    height: 100vh;
+    img{
+      width: 160px;
+      margin-bottom: 2rem;
+    }
+    ul{
+      margin-top: 5rem;
+      list-style: none;
+      // background: red;
+      a{
+        text-decoration: none;
+        color: rgb(31, 29, 29);
+        margin-left: 1rem;
+      }
+      li{
+        display: flex;
+        align-items: center;
+        margin-top: 1.3rem;
+        color: rgb(162, 157, 167);
+        font-size: 1.2rem;
+        cursor: pointer;
+      }
+    }
+    .saldo{
+      h3{
+        color: rgb(147, 151, 147);
+        font-size: 1rem;
+        margin-bottom: 2px;
+      }
+      span{
+        font-weight: bold;
+        font-size: 1.8rem;
       }
     }
   }
