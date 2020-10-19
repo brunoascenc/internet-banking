@@ -10,6 +10,14 @@ body {
   font-family: "Questrial", sans-serif;
 }
 
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
 input,
 button {
   -webkit-appearance: none;
@@ -153,7 +161,92 @@ button {
 }
 
 /*---------Home---------*/
+.home-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 22vw;
+}
+
+.home-container .dados {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-right: 5rem;
+  width: 100%;
+}
+
+.home-container .dados .grafico {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 600px;
+  margin-top: 2.3rem;
+}
+
+.home-container .dados .grafico h1 {
+  margin: 0 auto;
+}
+
+.home-container .dados-empresa {
+  margin-top: 2.3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.home-container .dados-empresa h1 {
+  margin-bottom: 1rem;
+}
+
+.home-container .dados-empresa li {
+  margin-top: 1rem;
+}
+
+.home-container .dados-empresa li span {
+  color: #171817;
+  font-weight: bold;
+}
+
+.home-container .dados-empresa .extrato {
+  margin-top: 5rem;
+}
+
+.home-container .dados-empresa .extrato span {
+  color: #171817;
+  font-weight: bold;
+}
+
+.home-container .dados-empresa .extrato div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.home-container .dados-empresa .extrato div h3 {
+  margin-right: 50px;
+}
+
+.home-container .dados-empresa .extrato div a {
+  font-size: 0.9rem;
+  color: #45b54a;
+  font-weight: bold;
+  border-bottom: solid 1px #45b54a;
+}
+
 .menu-container {
+  position: fixed;
+  left: 0;
   height: 100vh;
   width: 20vw;
   border-right: solid 1px #e7dfdf;
@@ -209,5 +302,9 @@ button {
 .menu-container nav .saldo span {
   font-weight: bold;
   font-size: 1.8rem;
+}
+
+.menu-selected {
+  color: #45b54a;
 }
 /*# sourceMappingURL=App.css.map */

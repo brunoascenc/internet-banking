@@ -9,6 +9,14 @@ body {
   font-family: "Questrial", sans-serif;
 }
 
+ul{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+
 input,
 button {
   -webkit-appearance: none;
@@ -118,11 +126,65 @@ $main-green: rgb(69, 181, 74);
 
 
 /*---------Home---------*/
+.home-container{
+  display: flex;
+  // justify-content: center;
+  margin-left: 22vw;
+  .dados{
+    display: flex;
+    justify-content: space-between;
+    padding-right: 5rem;
+    width: 100%;
+    .grafico{
+      display: flex;
+      width: 600px;
+      margin-top: 2.3rem;
+      h1{
+        margin: 0 auto;
+      }
+    }
+  }
+  .dados-empresa{
+    margin-top: 2.3rem;
+    display: flex;
+    flex-direction: column;
+    h1{
+      margin-bottom: 1rem;
+    }
+    li{
+      margin-top: 1rem;
+      span{
+        color: rgb(23, 24, 23);
+        font-weight: bold;
+      }
+    }
+    .extrato{
+      margin-top: 5rem;
+      span{
+        color: rgb(23, 24, 23);
+        font-weight: bold;
+      }
+      div{
+        display: flex;
+        align-items: center;
+        h3{
+          margin-right: 50px;
+        }
+        a{
+          font-size: 0.9rem;
+          color: $main-green;
+          font-weight: bold;
+          border-bottom: solid 1px $main-green;
+        };
+      }
+    }
+  }
+}
 
 //Side menu
 .menu-container{
-  // position: fixed;
-  // left: 0;
+  position: fixed;
+  left: 0;
   height: 100vh;
   width: 20vw;
   border-right: solid 1px rgb(231, 223, 223);
@@ -165,4 +227,7 @@ $main-green: rgb(69, 181, 74);
       }
     }
   }
+}
+.menu-selected{
+  color: $main-green;
 }

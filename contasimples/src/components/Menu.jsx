@@ -19,7 +19,7 @@ export default function Menu() {
         </div>
         <ul>
           <li>
-          <AiOutlineHome/> <a href="/#">Início</a>
+          <AiOutlineHome className="menu-selected"/> <a href="/#">Início</a>
           </li>
           <li>
             <FaRegMoneyBillAlt/> <a href="/#">Depositar</a>
