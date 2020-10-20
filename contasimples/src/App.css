@@ -126,6 +126,11 @@ button {
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 1px;
+  width: 100%;
+}
+
+.login-container .login-form .signin button:focus {
+  outline: none;
 }
 
 .login-container .login-form a {

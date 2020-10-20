@@ -1,5 +1,6 @@
 import React from "react";
 import Logo from "../images/logo.png";
+import { Link } from "react-router-dom";
 import '../App.css'
 
 export default function Login() {
@@ -18,7 +19,9 @@ export default function Login() {
           <div className="signin">
             <input type="email" placeholder="Endereço de e-mail" />
             <input type="text" placeholder="Senha" />
+            <Link to="/home">
             <button>Entrar</button>
+            </Link>
           </div>
 
           <a href="/#">Esqueci minha senha</a>

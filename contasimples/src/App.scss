@@ -95,6 +95,10 @@ $main-green: rgb(69, 181, 74);
         font-weight: bold;
         text-transform: uppercase;
         letter-spacing: 1px;
+        width: 100%;
+        &:focus{
+          outline: none;
+        }
       }
     }
 
