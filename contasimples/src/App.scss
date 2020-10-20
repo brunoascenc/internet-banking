@@ -191,7 +191,7 @@ $main-green: rgb(69, 181, 74);
   left: 0;
   height: 100vh;
   width: 20vw;
-  border-right: solid 1px rgb(231, 223, 223);
+  border-right: solid 1px rgb(240, 232, 232);
   nav{
     display: flex;
     flex-direction: column;
@@ -205,8 +205,8 @@ $main-green: rgb(69, 181, 74);
       margin-top: 5rem;
       list-style: none;
       // background: red;
-      a{
-        text-decoration: none;
+      span{
+        // text-decoration: none;
         color: rgb(31, 29, 29);
         margin-left: 1rem;
       }
@@ -228,10 +228,36 @@ $main-green: rgb(69, 181, 74);
       span{
         font-weight: bold;
         font-size: 1.8rem;
+        color: rgb(31, 29, 29);
       }
     }
   }
 }
 .menu-selected{
   color: $main-green;
+}
+
+
+/*-------Extrato page-------*/
+
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 1rem;
+  th{
+    color: rgb(21, 22, 21);
+  }
+
+  td, th {
+    border: 1px solid #f0e6e6;
+    font-size: 14px;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #e9e0e0;
+  }
 }
