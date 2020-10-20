@@ -134,6 +134,7 @@ $main-green: rgb(69, 181, 74);
   display: flex;
   // justify-content: center;
   margin-left: 22vw;
+  margin-top: 3rem;
   .dados{
     display: flex;
     justify-content: space-between;
@@ -142,14 +143,12 @@ $main-green: rgb(69, 181, 74);
     .grafico{
       display: flex;
       width: 600px;
-      margin-top: 2.3rem;
       h1{
         margin: 0 auto;
       }
     }
   }
   .dados-empresa{
-    margin-top: 2.3rem;
     display: flex;
     flex-direction: column;
     h1{
@@ -164,23 +163,71 @@ $main-green: rgb(69, 181, 74);
     }
     .extrato{
       margin-top: 5rem;
-      span{
-        color: rgb(23, 24, 23);
-        font-weight: bold;
+    }
+  }
+}
+
+/*Extrato*/
+.extrato{
+  span{
+    color: rgb(23, 24, 23);
+    font-weight: bold;
+  }
+  .filter{
+    width: 100%;
+    select{
+      cursor: pointer;
+      border: solid 1px rgb(222, 231, 222);
+      padding: 6px;
+      &:focus{
+        outline: none;
       }
-      div{
-        display: flex;
-        align-items: center;
-        h3{
-          margin-right: 50px;
-        }
-        a{
-          font-size: 0.9rem;
-          color: $main-green;
-          font-weight: bold;
-          border-bottom: solid 1px $main-green;
-        };
-      }
+    }
+  }
+  div{
+    display: flex;
+    align-items: center;
+    h3{
+      margin-right: 50px;
+    }
+    a{
+      font-size: 0.9rem;
+      color: $main-green;
+      font-weight: bold;
+      border-bottom: solid 1px $main-green;
+    };
+  }
+}
+
+.extrato-detalhe{
+  width: 80%;
+  margin: 0 auto;
+ .filter{
+   display: flex;
+   justify-content: space-between;
+   margin-top: 2rem;
+   margin-bottom: -0.5rem;
+ }
+}
+
+//Cartoes
+.cartoes-empresa{
+  display: flex;
+  flex-direction: column;
+  .header{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    color: rgb(187, 182, 182);
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  .cartoes{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+    h4{
+      color: rgb(59, 61, 59);
     }
   }
 }
@@ -188,6 +235,8 @@ $main-green: rgb(69, 181, 74);
 //Side menu
 .menu-container{
   position: fixed;
+  top: 0;
+  bottom: 0;
   left: 0;
   height: 100vh;
   width: 20vw;
@@ -258,6 +307,6 @@ table {
   }
   
   tr:nth-child(even) {
-    background-color: #e9e0e0;
+    background-color: #f0e7e7;
   }
 }
