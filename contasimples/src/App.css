@@ -171,6 +171,7 @@ button {
   display: -ms-flexbox;
   display: flex;
   margin-left: 22vw;
+  margin-top: 3rem;
 }
 
 .home-container .dados {
@@ -189,7 +190,6 @@ button {
   display: -ms-flexbox;
   display: flex;
   width: 600px;
-  margin-top: 2.3rem;
 }
 
 .home-container .dados .grafico h1 {
@@ -197,7 +197,6 @@ button {
 }
 
 .home-container .dados-empresa {
-  margin-top: 2.3rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -224,12 +223,27 @@ button {
   margin-top: 5rem;
 }
 
-.home-container .dados-empresa .extrato span {
+/*Extrato*/
+.extrato span {
   color: #171817;
   font-weight: bold;
 }
 
-.home-container .dados-empresa .extrato div {
+.extrato .filter {
+  width: 100%;
+}
+
+.extrato .filter select {
+  cursor: pointer;
+  border: solid 1px #dee7de;
+  padding: 6px;
+}
+
+.extrato .filter select:focus {
+  outline: none;
+}
+
+.extrato div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -238,19 +252,74 @@ button {
           align-items: center;
 }
 
-.home-container .dados-empresa .extrato div h3 {
+.extrato div h3 {
   margin-right: 50px;
 }
 
-.home-container .dados-empresa .extrato div a {
+.extrato div a {
   font-size: 0.9rem;
   color: #45b54a;
   font-weight: bold;
   border-bottom: solid 1px #45b54a;
 }
 
+.extrato-detalhe {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.extrato-detalhe .filter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 2rem;
+  margin-bottom: -0.5rem;
+}
+
+.cartoes-empresa {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.cartoes-empresa .header {
+  margin-top: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: #bbb6b6;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.cartoes-empresa .cartoes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 3rem;
+}
+
+.cartoes-empresa .cartoes h4 {
+  color: #3b3d3b;
+}
+
 .menu-container {
   position: fixed;
+  top: 0;
+  bottom: 0;
   left: 0;
   height: 100vh;
   width: 20vw;
@@ -333,6 +402,6 @@ table td, table th {
 }
 
 table tr:nth-child(even) {
-  background-color: #e9e0e0;
+  background-color: #f0e7e7;
 }
 /*# sourceMappingURL=App.css.map */
