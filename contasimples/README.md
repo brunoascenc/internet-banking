@@ -10,7 +10,7 @@ Para acessar a home do internet banking clique em `Entrar` na página de Login.
 
 ## Instalação e configuração.
 
-Faça um clone desse repositório. Tenha instalado `npm` e `node` na sua máquina.
+Faça um clone ou baixe esse repositório. Tenha instalado `npm` e `node` na sua máquina.
 
 Instalação:
 
