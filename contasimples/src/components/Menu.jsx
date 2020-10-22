@@ -1,62 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 import Logo from "../images/logo.png";
 import "../App.css";
-import {
-  AiOutlineHome,
-  AiOutlineCreditCard,
-  AiOutlineBank,
-} from "react-icons/ai";
-import { FaRegMoneyBillAlt } from "react-icons/fa";
-import { RiNewspaperLine } from "react-icons/ri";
-import { BiTransfer } from "react-icons/bi";
-import { Link } from "react-router-dom";
+import MenuLinks from "./side-menu/MenuLinks";
+import SaldoEmpresa from "./side-menu/SaldoEmpresa";
+import { VscMenu, VscClose } from "react-icons/vsc";
 
 export default function Menu() {
+  //Mobile menu toggle
+  const [click, setClick] = useState(false);
+  const handleClick = () => setClick(!click);
+
   return (
-    <div className="menu-container">
-      <nav>
-        <div className="header">
-          <a href="/#">
-            <img src={Logo} alt="logo" />
-          </a>
-          <div className="saldo">
-            <h3>Saldo da conta</h3>
-            <span>R$: 200,00</span>
-          </div>
+    <>
+      <div className="mobile-menu">
+        <div className="logo">
+          <img src={Logo} alt="logo" />
         </div>
-        <ul>
-          <Link to="/home">
-            <li>
-              <AiOutlineHome className="menu-selected" /> <span>Início</span>
-            </li>
-          </Link>
-          <Link to="/depositar">
-            <li>
-              <FaRegMoneyBillAlt /> <span>Depositar</span>
-            </li>
-          </Link>
-          <Link to="/extrato">
-            <li>
-              <RiNewspaperLine /> <span>Extrato da conta</span>
-            </li>
-          </Link>
-          <Link to="/cartoes">
-            <li>
-              <AiOutlineCreditCard /> <span>Cartões</span>
-            </li>
-          </Link>
-          <Link to="/transferencia">
-            <li>
-              <BiTransfer /> <span>Transferência</span>
-            </li>
-          </Link>
-          <Link to="/pagamentos">
-            <li>
-              <AiOutlineBank /> <span>Pagamentos</span>
-            </li>
-          </Link>
-        </ul>
-      </nav>
-    </div>
+        <div className="menu-icon" onClick={handleClick}>
+          {click ? <VscClose /> : <VscMenu />}
+        </div>
+      </div>
+      <div className={click ? "menu-container toggle" : "menu-container"}>
+        <nav className="navbar">
+          <div className="header">
+            <a href="/#">
+              <img src={Logo} alt="logo" />
+            </a>
+            <SaldoEmpresa />
+          </div>
+          <ul>
+            <MenuLinks />
+          </ul>
+          <footer>
+            <span>Conta Simples &copy; 2020</span>
+          </footer>
+        </nav>
+      </div>
+    </>
   );
 }

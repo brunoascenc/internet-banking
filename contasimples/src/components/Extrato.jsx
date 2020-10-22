@@ -1,73 +1,40 @@
-import React from "react";
+import React, { useContext } from "react";
+import { DataContext } from "../data/DataProvider";
 import Menu from "./Menu";
 import "../App.css";
+import Filter from "./extrato-components/useFilter";
+import TransacaoSelect from "./extrato-components/TransacaoSelect";
+import DisplayTransacoes from "./extrato-components/DisplayTransacoes";
 
 export default function Extrato() {
+  const value = useContext(DataContext);
+  const [transacoes] = value.transacoes;
+  const filterTransacoes = transacoes.filter((emp) => emp.empresaId === 1);
+  //Passando dados para o filter
+  const [sorted, handleOrderBy, orderBy] = Filter(filterTransacoes);
+
   return (
     <div className="home-container">
       <Menu />
       <div className="extrato extrato-detalhe">
         <div>
-          <h3>Extrato</h3>
+          <h1>Extrato</h1>
         </div>
-        <div className="filter">
-          <span>Tipo de transação:</span>
-          <select>
-            <option>Cartão de crédito</option>
-            <option>Boleto</option>
-          </select>
-        </div>
+        <TransacaoSelect handleChange={handleOrderBy} />
         <table>
-          <tr>
-            <th>Estabelecimento</th>
-            <th>Tipo</th>
-            <th>Valor</th>
-          </tr>
-          <tr>
-            <td>Facebook</td>
-            <td>Transferencia Bancaria</td>
-            <td>R$ 800,00</td>
-          </tr>
-          <tr>
-            <td>Twitter</td>
-            <td>Compra com cartão</td>
-            <td>R$ 2555,00</td>
-          </tr>
-          <tr>
-            <td>Twitter</td>
-            <td>Compra com cartão</td>
-            <td>R$ 2555,00</td>
-          </tr>
-          <tr>
-            <td>Twitter</td>
-            <td>Compra com cartão</td>
-            <td>R$ 2555,00</td>
-          </tr>
-          <tr>
-            <td>Twitter</td>
-            <td>Compra com cartão</td>
-            <td>R$ 2555,00</td>
-          </tr>
-          <tr>
-            <td>Twitter</td>
-            <td>Compra com cartão</td>
-            <td>R$ 2555,00</td>
-          </tr>
-          <tr>
-            <td>Twitter</td>
-            <td>Compra com cartão</td>
-            <td>R$ 2555,00</td>
-          </tr>
-          <tr>
-            <td>Twitter</td>
-            <td>Compra com cartão</td>
-            <td>R$ 2555,00</td>
-          </tr>
-          <tr>
-            <td>Twitter</td>
-            <td>Compra com cartão</td>
-            <td>R$ 2555,00</td>
-          </tr>
+          <tbody>
+            <tr>
+              <th>Data</th>
+              <th>Estabelecimento</th>
+              <th>Tipo</th>
+              <th>Valor</th>
+            </tr>
+            <DisplayTransacoes
+              orderBy={orderBy}
+              filterTransacoes={filterTransacoes}
+              sorted={sorted}
+            />
+          </tbody>
         </table>
       </div>
     </div>
