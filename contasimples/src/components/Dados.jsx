@@ -21,7 +21,7 @@ export default function Dados() {
           <div>
             <h3>Extrato</h3>
             <Link to="/extrato">
-              <a href="/#">Ver extrato completo</a>
+              <span className="extrato-link">Ver extrato completo</span>
             </Link>
           </div>
           <table>

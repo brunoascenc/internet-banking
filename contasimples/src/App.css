@@ -403,7 +403,7 @@ button {
   margin-right: 50px;
 }
 
-.extrato div a {
+.extrato div .extrato-link {
   font-size: 0.9rem;
   color: #45b54a;
   font-weight: bold;
