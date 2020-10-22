@@ -1,59 +1,51 @@
-import React from "react";
+import React, { useContext } from "react";
+import { DataContext } from "../data/DataProvider";
 import "../App.css";
+import DadosEmpresa from "./dados-components/DadosEmpresa";
+import DadosGrafico from "./dados-components/DadosGrafico";
+import { Link } from "react-router-dom";
 
 export default function Dados() {
+  const value = useContext(DataContext);
+  const [dados] = value.dados;
+  const [transacoes] = value.transacoes;
+  const filterEmpresa = dados.filter((emp) => emp.empresaId === 1);
+  const filterTransacoes = transacoes.filter((emp) => emp.empresaId === 1);
+  filterTransacoes.length = 4;
+
   return (
     <div className="dados">
       <div className="dados-empresa">
-        <h1>Nome Empresa</h1>
-        <ul>
-          <li>
-            <span>CNPJ</span>: 123456789
-          </li>
-          <li>
-            <span>Banco</span>: 999
-          </li>
-          <li>
-            <span>Nome do banco</span>: Conta Simples
-          </li>
-          <li>
-            <span>Agencia</span>: 1
-          </li>
-          <li>
-            <span>Conta</span>: 123456
-          </li>
-          <li>
-            <span>Digito da conta</span>: 1
-          </li>
-        </ul>
-
+        <DadosEmpresa dadosEmpresa={filterEmpresa} />
         <div className="extrato">
           <div>
             <h3>Extrato</h3>
-            <a href="/#">Ver extrato completo</a>
+            <Link to="/extrato">
+              <a href="/#">Ver extrato completo</a>
+            </Link>
           </div>
           <table>
-            <tr>
-              <th>Estabelecimento</th>
-              <th>Tipo</th>
-              <th>Valor</th>
-            </tr>
-            <tr>
-              <td>Facebook</td>
-              <td>Transferencia Bancaria</td>
-              <td>R$ 800,00</td>
-            </tr>
-            <tr>
-              <td>Twitter</td>
-              <td>Compra com cartão</td>
-              <td>R$ 2555,00</td>
-            </tr>
+            <tbody>
+              <tr>
+                <th>Estabelecimento</th>
+                <th>Tipo</th>
+                <th>Valor</th>
+              </tr>
+              {filterTransacoes &&
+                filterTransacoes.map((dado, idx) => {
+                  return (
+                    <tr key={idx}>
+                      <td>{dado.estabelecimento}</td>
+                      <td>{dado.descricaoTransacao}</td>
+                      <td>R$: {dado.valor}</td>
+                    </tr>
+                  );
+                })}
+            </tbody>
           </table>
         </div>
       </div>
-      <div className="grafico">
-        <h1>Grafico</h1>
-      </div>
+      <DadosGrafico />
     </div>
   );
 }
