@@ -32,4 +32,17 @@ Para visitar o site:
 
 `localhost:3000/`
 
+## Tecnologias utilizadas
+
+Gráfico:
+
+`Chart.js`: https://www.chartjs.org/
+
+REST API: 
+
+`json-server`: https://www.npmjs.com/package/json-server
+
+
+
+
 
